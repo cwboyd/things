@@ -18,10 +18,11 @@ mmPerInch = 25.4;
 
 // Parameterized values for outside and inside holes and height.
 // Free fit for 5/8 (inner axle hole) is 0.6562
+// Measured hole diameter is 2.060, allowing 0.015 for clearance.
 // See https://littlemachineshop.com/reference/tapdrill.php
-outerDiam = 2 * mmPerInch;
+outerDiam = 2.045 * mmPerInch;
 innerDiam = 0.6562 * mmPerInch;
-height = 2 * mmPerInch;  // max thickness of spool
+height = 2.000 * mmPerInch;  // max thickness of spool
 
 // Bolt hole constants.
 // Free fit for 1/4 and 5/16 is 0.2660 and 0.3320, respectively.
