@@ -58,13 +58,17 @@ difference()
             cylinder(h = 2* boltHexHeadHeightSmaller, d = boltHexHeadCornersDistSmaller, center = false, $fn = 6);
          }
          guideHole(0.125 * mmPerInch);
-         rotate(45) guideHole(0.125 * mmPerInch);
+         rotate(30) guideHole(0.125 * mmPerInch);
+         rotate(60) guideHole(0.125 * mmPerInch);
          rotate(90) guideHole(0.125 * mmPerInch);
-         rotate(135) guideHole(0.125 * mmPerInch);
+         rotate(120) guideHole(0.125 * mmPerInch);
+         rotate(150) guideHole(0.125 * mmPerInch);
          rotate(180) guideHole(0.125 * mmPerInch);
-         rotate(225) guideHole(0.125 * mmPerInch);
+         rotate(210) guideHole(0.125 * mmPerInch);
+         rotate(240) guideHole(0.125 * mmPerInch);
          rotate(270) guideHole(0.125 * mmPerInch);
-         rotate(315) guideHole(0.125 * mmPerInch);
+         rotate(300) guideHole(0.125 * mmPerInch);
+         rotate(330) guideHole(0.125 * mmPerInch);
     }
 }
 
