@@ -22,27 +22,31 @@ mmPerInch = 25.4;
 // Free fit for 5/8 (inner axle hole) is 0.6562
 // Measured hole diameter is 2.060, allowing 0.015 for clearance.
 // See https://littlemachineshop.com/reference/tapdrill.php
-outerDiam = 2.00 * mmPerInch;
-innerDiam = 0.3970 * mmPerInch;
-height = 0.375 * mmPerInch;  // max thickness of spool
 
-// Bolt hole constants.
-guideHoleDiam = 0.125;
-guideHoleDistFromCenter = 0.75 * mmPerInch;
+// innerDiam has to be at least 0.265, to pass the spline-horn screw head through
+outerDiam = 3.00 * mmPerInch;
+innerDiam = 0.300 * mmPerInch;
+height = 0.2005 * mmPerInch;  // max thickness of spool
 
-// Hex head constants - the hex head is to jam the spring into, so it doesn't twist.
-// For 1/2" spring.
-// 2 Measurements - typical dist across the corners and max head thickness.
-// See http://www.reglover.com/desktop/reg/resources_dimension_bolt_hex.php
-boltHexHeadCornersDistSmaller = 0.5312 * mmPerInch; // 7/16 head
-boltHexHeadHeightSmaller = 0.125 * mmPerInch;
+// Bolt hole constants. guideHole must pass #6 bolt.
+// See https://littlemachineshop.com/reference/tapdrill.php
+// Accomodates Actobatics servo horns with 0.770" spacing, #6 bolts
+guideHoleDiam = 0.1495 * mmPerInch;
+guideHoleDistFromCenter = 0.5 * 0.770 * mmPerInch;
 
 
-module guideHole(holeDiam)
+module guideHole(holeDiam, distanceFromCenter)
 {
-    translate([guideHoleDistFromCenter, 0, 0]) {
-        cylinder(h = 3*height, d = guideHoleDiam * mmPerInch, center = true);
+    translate([distanceFromCenter, 0, 0]) {
+        cylinder(h = 3*height, d = holeDiam, center = true);
     }
+}
+
+module guideHole3Radial(holeDiam, distanceFromCenter)
+{
+     guideHole(guideHoleDiam, guideHoleDistFromCenter);
+     guideHole(guideHoleDiam, 2*guideHoleDistFromCenter);
+     guideHole(guideHoleDiam, 3*guideHoleDistFromCenter);
 }
 
 difference()
@@ -51,21 +55,11 @@ difference()
 
     union() {
         cylinder(h = 3*height, d = innerDiam, center = true);
-         translate([0, 0, height - boltHexHeadHeightSmaller]) {
-            cylinder(h = 2* boltHexHeadHeightSmaller, d = boltHexHeadCornersDistSmaller, center = false, $fn = 6);
-         }
-         guideHole(0.125 * mmPerInch);
-         rotate(30) guideHole(0.125 * mmPerInch);
-         rotate(60) guideHole(0.125 * mmPerInch);
-         rotate(90) guideHole(0.125 * mmPerInch);
-         rotate(120) guideHole(0.125 * mmPerInch);
-         rotate(150) guideHole(0.125 * mmPerInch);
-         rotate(180) guideHole(0.125 * mmPerInch);
-         rotate(210) guideHole(0.125 * mmPerInch);
-         rotate(240) guideHole(0.125 * mmPerInch);
-         rotate(270) guideHole(0.125 * mmPerInch);
-         rotate(300) guideHole(0.125 * mmPerInch);
-         rotate(330) guideHole(0.125 * mmPerInch);
-    }
+         
+         guideHole3Radial(guideHoleDiam, guideHoleDistFromCenter);
+         rotate(90) guideHole3Radial(guideHoleDiam, guideHoleDistFromCenter);
+         rotate(180) guideHole3Radial(guideHoleDiam, guideHoleDistFromCenter);
+         rotate(270) guideHole3Radial(guideHoleDiam, guideHoleDistFromCenter);
+  }
 }
 
