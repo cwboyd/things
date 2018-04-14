@@ -18,31 +18,30 @@ mmPerInch = 25.4;
 
 // Parameterized values for outside and inside holes and height.
 // Free fit for 1/4 and 5/16 is 0.2660 and 0.3320, respectively.
+// Free fit for 3/8 is 0.3970
 // Free fit for 5/8 (inner axle hole) is 0.6562
 // Measured hole diameter is 2.060, allowing 0.015 for clearance.
 // See https://littlemachineshop.com/reference/tapdrill.php
 outerDiam = 2.00 * mmPerInch;
-innerDiam = 0.2660 * mmPerInch;
-height = 0.5 * mmPerInch;  // max thickness of spool
+innerDiam = 0.3970 * mmPerInch;
+height = 0.375 * mmPerInch;  // max thickness of spool
 
 // Bolt hole constants.
-// Free fit for 1/4 and 5/16 is 0.2660 and 0.3320, respectively.
-// See https://littlemachineshop.com/reference/tapdrill.php
-boltHoleDiamSmaller = 0.2660 * mmPerInch;
-boltHoleDiamLarger = 0.3320 * mmPerInch;
-boltHoleDistFromCenter = 0.75 * mmPerInch;
+guideHoleDiam = 0.125;
+guideHoleDistFromCenter = 0.75 * mmPerInch;
 
-// Hex head constants - 1/4 bolt for center.
+// Hex head constants - the hex head is to jam the spring into, so it doesn't twist.
+// For 1/2" spring.
 // 2 Measurements - typical dist across the corners and max head thickness.
 // See http://www.reglover.com/desktop/reg/resources_dimension_bolt_hex.php
-boltHexHeadCornersDistSmaller = 0.505 * mmPerInch; // 7/16 head
+boltHexHeadCornersDistSmaller = 0.5312 * mmPerInch; // 7/16 head
 boltHexHeadHeightSmaller = 0.188 * mmPerInch;
 
 
 module guideHole(holeDiam)
 {
-    translate([boltHoleDistFromCenter, 0, 0]) {
-        cylinder(h = 3*height, d = 0.125 * mmPerInch, center = true);
+    translate([guideHoleDistFromCenter, 0, 0]) {
+        cylinder(h = 3*height, d = guideHoleDiam * mmPerInch, center = true);
     }
 }
 
