@@ -30,7 +30,7 @@ module servoBounds()
 }
 
 baseHoleDiam = 0.1250 * mmPerInch;
-boltHeadSeatDiam = 0.500 * mmPerInch;
+baseBoltHeadSeatDiam = 0.500 * mmPerInch;
 
 difference() {
    translate([-40, -10, -15]) {
@@ -59,15 +59,19 @@ difference() {
    translate([55, 45, 0]) rotate([0, 90, 0]) cylinder(h = 30, d = baseHoleDiam, center = true);
 
    // seats on the top face to permit flat contact
-   translate([35, -20, 0]) rotate([0, 90, 0]) cylinder(h = 30, d = boltHeadSeatDiam, center = true);
-   translate([35, 45, 0]) rotate([0, 90, 0]) cylinder(h = 30, d = boltHeadSeatDiam, center = true);
+   translate([35, -20, 0]) rotate([0, 90, 0]) cylinder(h = 30, d = baseBoltHeadSeatDiam, center = true);
+   translate([35, 45, 0]) rotate([0, 90, 0]) cylinder(h = 30, d = baseBoltHeadSeatDiam, center = true);
    
    // reinforcement plate bolt holes (one side must be open, to permit motor insertion)
+   translate([-30, 0, 0]) rotate([90, 0, 0]) cylinder(h = 80, d = baseHoleDiam, center = true);
+   translate([30, 0, 0]) rotate([90, 0, 0]) cylinder(h = 80, d = baseHoleDiam, center = true);
+
+   // And their sets on the back side, which is not flat
+ #  translate([-30, 40, 0]) rotate([90, 0, 0]) cylinder(h = 40, d = baseBoltHeadSeatDiam, center = true);
+ #  translate([30, 40, 0]) rotate([90, 0, 0]) cylinder(h = 40, d = baseBoltHeadSeatDiam, center = true);
 
 }
 
-   translate([-30, 0, 0]) rotate([90, 0, 0]) cylinder(h = 300, d = baseHoleDiam, center = true);
-   translate([30, 0, 0]) rotate([90, 0, 0]) cylinder(h = 300, d = baseHoleDiam, center = true);
 
  
 //}
