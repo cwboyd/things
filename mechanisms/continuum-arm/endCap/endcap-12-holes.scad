@@ -35,7 +35,7 @@ guideHoleDistFromCenter = 0.75 * mmPerInch;
 // 2 Measurements - typical dist across the corners and max head thickness.
 // See http://www.reglover.com/desktop/reg/resources_dimension_bolt_hex.php
 boltHexHeadCornersDistSmaller = 0.5312 * mmPerInch; // 7/16 head
-boltHexHeadHeightSmaller = 0.188 * mmPerInch;
+boltHexHeadHeightSmaller = 0.125 * mmPerInch;
 
 
 module guideHole(holeDiam)
