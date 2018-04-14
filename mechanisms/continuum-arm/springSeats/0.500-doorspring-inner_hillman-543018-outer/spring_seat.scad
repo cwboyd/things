@@ -15,16 +15,13 @@ mmPerInch = 25.4;
 resolution=50;
 bolt_hole_radius= 0.5 * (0.5312) * mmPerInch;
 
-// for Lowes Hillman 543018 23/32 x 3 1/2 x 0.041"
-// should also work with Century Spring C-756, which has same dimensions.
+// For Lowes Hillman 543018 23/32 x 3 1/2 x 0.041", hould also work with
+// Century Spring C-756, which has same dimensions.
 
-//seat_radius=(0.625) * mmPerInch; // (inside)
-//seat_radius=0.5 * (23/32) * mmPerInch; // (outside) 
+// Spring diam was 23/32" nominal; I oversize it by about 47 thou to account for PLA contraction.
 seat_radius=0.5 * (0.7656) * mmPerInch; // (outside) 
 support_height=(3/8) * mmPerInch;
 
-//"inside" or "outside"
-//seat_type="inside";
 seat_type="outside";
 thickness=(1/8)*mmPerInch;
 
