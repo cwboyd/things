@@ -26,13 +26,13 @@ mmPerInch = 25.4;
 //
 
 pulleyInsideDiam = 3.0 * mmPerInch;
-thick = 0.375 * mmPerInch;   // overall thickness
-lipThickness = 0.040 * mmPerInch; // outer edge flat portion - so we don't have a sharp edge
+thick = 0.375 * mmPerInch;             // overall thickness
+lipThickness = 0.040 * mmPerInch;      // outer edge flat portion - so we don't have a sharp edge
 slotWidth = 0.090 * mmPerInch;
-slotOverhangAngle = 45.0;   // degrees, overhangs should be less than or equal to 45 degrees
+slotOverhangAngle = 45.0;              // degrees, overhangs should be less than or equal to 45 degrees
 
 // Thickness of the overhang is half diff in thick and slotWidth
-alpha = (thick - lipThickness - slotWidth) / 2;
+alpha = ( (thick - slotWidth) / 2 )  - lipThickness;
 
 module pulleyProfile()
 {
