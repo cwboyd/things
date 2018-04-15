@@ -97,6 +97,12 @@ difference()
       rotate(90) guideHole3Radial(guideHoleDiam, guideHoleDistFromCenter);
       rotate(180) guideHole3Radial(guideHoleDiam, guideHoleDistFromCenter);
       rotate(270) guideHole3Radial(guideHoleDiam, guideHoleDistFromCenter);
+
+      // Hole for string attachment.
+      rotate(45) guideHole(thick/2, pulleyInsideDiam/2 - thick/8);
+      rotate(135) guideHole(thick/2, pulleyInsideDiam/2 - thick/8);
+      rotate(225) guideHole(thick/2, pulleyInsideDiam/2 - thick/8);
+      rotate(315) guideHole(thick/2, pulleyInsideDiam/2 - thick/8);
    }
 }
 
