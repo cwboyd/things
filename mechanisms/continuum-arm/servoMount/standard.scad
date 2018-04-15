@@ -2,6 +2,10 @@
 
 mmPerInch = 25.4;
 
+// Thickness of the mount ... can be no more than around 20mm between hole bracket
+// and wires, because of interference.
+mountThicknessMM = 15.0;
+
 // Tun up precision = slower render time.
 $fn = 100;
 
@@ -29,27 +33,30 @@ module servoBounds()
    }
 }
 
-baseHoleDiam = 0.1250 * mmPerInch;
-baseBoltHeadSeatDiam = 0.500 * mmPerInch;
+// https://littlemachineshop.com/images/gallery/PDF/TapDrillSizes.pdf, M3 uses 3.3 for free fit.
+// seat wide, because tools
+baseHoleDiam = 3.3;
+baseBoltHeadSeatDiam = 0.300 * mmPerInch;
 
-difference() {
-   translate([-40, -10, -15]) {
-      cube([100, 25, 30], center = false);
+difference() 
+{
+   translate([-40, -10, -mountThicknessMM/2]) {
+      cube([100, 25, mountThicknessMM], center = false);
 
       // back side draft angle + rounded upper corner
       hull() {
-         translate([10, 25, 0]) cylinder(h = 30, d = 20, center = false);
-         translate([85, 25, 0]) cube([15, 20, 30], center = false);
+         translate([10, 25, 0]) cylinder(h = mountThicknessMM, d = 20, center = false);
+         translate([85, 25, 0]) cube([15, 20, mountThicknessMM], center = false);
       }
       // back size foot
       hull() {
-         translate([85, 45, 0]) cylinder(h = 30, d = 10, center = false);
-         translate([85, 45, 0]) cube([15, 20, 30], center = false);
+         translate([85, 45, 0]) cylinder(h = mountThicknessMM, d = 10, center = false);
+         translate([85, 45, 0]) cube([15, 20, mountThicknessMM], center = false);
       }
       // servo side foot
       hull() {
-         translate([85, -20, 0]) cube([15, 20, 30], center = false);
-         translate([85, 0, 0]) cylinder(h = 30, d = 10, center = false);
+         translate([85, -20, 0]) cube([15, 20, mountThicknessMM], center = false);
+         translate([85, 0, 0]) cylinder(h = mountThicknessMM, d = 10, center = false);
       }
    }
    servoBounds();
@@ -72,7 +79,4 @@ difference() {
 
 }
 
-
- 
-//}
 
