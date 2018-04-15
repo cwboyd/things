@@ -76,9 +76,9 @@ module guideHole(holeDiam, distanceFromCenter)
 
 module guideHole3Radial(holeDiam, distanceFromCenter)
 {
-   guideHole(guideHoleDiam, guideHoleDistFromCenter);
-   guideHole(guideHoleDiam, 2*guideHoleDistFromCenter);
-   guideHole(guideHoleDiam, 3*guideHoleDistFromCenter);
+   guideHole(holeDiam,   distanceFromCenter);
+   guideHole(holeDiam, 2*distanceFromCenter);
+   guideHole(holeDiam, 3*distanceFromCenter);
 }
 
 difference()
@@ -87,9 +87,12 @@ difference()
       pulleyProfile();
    }
 
-   union() {
+   union() 
+   {
+      // center hole
       cylinder(h = 3*thick, d = innerDiam, center = true);
 
+      // Holes for servo horn attachment.
       guideHole3Radial(guideHoleDiam, guideHoleDistFromCenter);
       rotate(90) guideHole3Radial(guideHoleDiam, guideHoleDistFromCenter);
       rotate(180) guideHole3Radial(guideHoleDiam, guideHoleDistFromCenter);
