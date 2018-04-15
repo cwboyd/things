@@ -12,21 +12,21 @@ alpha = (thick - lipThickness - slotWidth) / 2;
 
 module pulleyProfile()
 {
-    polygon(points = [ 
-        [0, slotWidth/2],                                                 // start of slot cut out
-        [0, thick/2],                                                     // top center
-        [pulleyInsideDiam/2 + alpha * tan(slotOverhangAngle), thick/2],   // top outside edge
-        [pulleyInsideDiam/2 + alpha * tan(slotOverhangAngle), thick/2 - lipThickness],   // top inside edge
-        [pulleyInsideDiam/2, slotWidth/2],                                // top of inside slot
-        [pulleyInsideDiam/2, -slotWidth/2],                               // bottom of inside slot
-        [pulleyInsideDiam/2 + alpha * tan(slotOverhangAngle), -thick/2 + lipThickness],  // bottom inside edge
-        [pulleyInsideDiam/2 + alpha * tan(slotOverhangAngle), -thick/2],  // bottom outside edge
-        [0, -thick/2],                                                    // bottom center
-        [0, -slotWidth/2],                                                // end of slot cut out
-    ]);
+   polygon(points = [ 
+      [0, slotWidth/2],                                                               // start of slot cut out
+      [0, thick/2],                                                                   // top center
+      [pulleyInsideDiam/2 + alpha * tan(slotOverhangAngle), thick/2],                 // top outside edge
+      [pulleyInsideDiam/2 + alpha * tan(slotOverhangAngle), thick/2 - lipThickness],  // top inside edge
+      [pulleyInsideDiam/2, slotWidth/2],                                              // top of inside slot
+      [pulleyInsideDiam/2, -slotWidth/2],                                             // bottom of inside slot
+      [pulleyInsideDiam/2 + alpha * tan(slotOverhangAngle), -thick/2 + lipThickness], // bottom inside edge
+      [pulleyInsideDiam/2 + alpha * tan(slotOverhangAngle), -thick/2],                // bottom outside edge
+      [0, -thick/2],                                                                  // bottom center
+      [0, -slotWidth/2],                                                              // end of slot cut out
+   ]);
 }
 
 rotate_extrude($fn = 100) {
-    pulleyProfile();
+   pulleyProfile();
 }
 
