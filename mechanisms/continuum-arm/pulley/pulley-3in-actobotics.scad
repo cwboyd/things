@@ -1,8 +1,9 @@
 //
-// Creates a spacer for fitting a 2" spool on a 5/8" axle,
-// e.g. a standard 10# MIG wire roll.  For making a re-spooler.
-// This version uses standard bolt holes (2 sizes at 90 deg cross, shifted
-// by 45 deg) to permit attaching a handle.
+// Parametric design for a pulley with holes compatible with Actobotics 0.770"
+// servo horns, with a center hole to permit subsequent attachment of horn to servo
+// by feeding through a screw for the shaft.
+//
+// This pulley lacks a side channel, unless the v2 version.
 //
 // This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
 // International License. To view a copy of this license, visit

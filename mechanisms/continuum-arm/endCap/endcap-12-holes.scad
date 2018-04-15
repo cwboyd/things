@@ -1,8 +1,7 @@
 //
-// Creates a spacer for fitting a 2" spool on a 5/8" axle,
-// e.g. a standard 10# MIG wire roll.  For making a re-spooler.
-// This version uses standard bolt holes (2 sizes at 90 deg cross, shifted
-// by 45 deg) to permit attaching a handle.
+// Stop endcap for a continuum arm, built with a 1/2" standard doorspring.
+// The doorspring is not under tension, but is used to provide transverse deflection
+// return.
 //
 // This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
 // International License. To view a copy of this license, visit

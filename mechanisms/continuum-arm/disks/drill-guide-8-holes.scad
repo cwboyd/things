@@ -1,8 +1,6 @@
 //
-// Creates a spacer for fitting a 2" spool on a 5/8" axle,
-// e.g. a standard 10# MIG wire roll.  For making a re-spooler.
-// This version uses standard bolt holes (2 sizes at 90 deg cross, shifted
-// by 45 deg) to permit attaching a handle.
+// Drill guide for a disk to form the "vertabra" of a continuum arm, with
+// 8 equally spaced holes (45 deg apart).
 //
 // This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
 // International License. To view a copy of this license, visit
