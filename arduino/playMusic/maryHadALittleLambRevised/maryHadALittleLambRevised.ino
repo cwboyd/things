@@ -95,13 +95,13 @@ void setup()
   // iterate over the notes of the melody:
   for (int thisNote = 0; thisNote < numberOfNotes; thisNote++) 
   {
-    Note& note = melody[thisNode];
+    Note& note = melody[thisNote];
 
     // to calculate the note duration, take one second 
     // divided by the note type.
     //e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
     //int noteDuration = 1000/noteDurations[thisNote];
-    int noteDuration = 1000/melody[thisNode].duration;
+    int noteDuration = 1000/melody[thisNote].duration;
     tone(8, melody[thisNote].note, noteDuration);
 
     // to distinguish the notes, set a minimum time between them.
