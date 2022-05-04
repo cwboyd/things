@@ -35,14 +35,20 @@ mm_mount_height = 10;
 // echo("mm_mount_width=", mm_mount_width);
 // echo("mm_mount_depth=", mm_mount_depth);
 
-// fasteners
+//
+// FASTENERS
+// TODO: measure actual bolts!
+//
+// Parameterized values for outside and inside holes and height.
+// Free / standard fit for M5 bolts is 5.5 mm. 
+// See https://littlemachineshop.com/images/Gallery/PDF/TapDrillSizes.pdf
 mm_bolt_length = 20;
-mm_bolt_diam = 5;
+mm_bolt_diam = 5.5;
 mm_bolt_socket_diam = 8;
 mm_nut_thickness = 4;
 mm_nut_diam = 8;
 
-// calculated reference centerlines
+// Calculated reference centerlines from external dimensions
 loc_x_width_centerline = mm_mount_width / 2;
 loc_y_depth_centerline = mm_mount_depth / 2;
 loc_z_thickness_centerline = mm_mount_height / 2;
@@ -80,29 +86,6 @@ xyz_nut_hole_two = [
 
 
 
-// Parameterized values for outside and inside holes and height.
-// Free fit for 1/4 and 5/16 is 0.2660 and 0.3320, respectively.
-// Free fit for 5/8 (inner axle hole) is 0.6562
-// Measured hole diameter is 2.060, allowing 0.015 for clearance.
-// See https://littlemachineshop.com/reference/tapdrill.php
-outerDiam = 2.00 * mmPerInch;
-innerDiam = 0.2660 * mmPerInch;
-height = 0.5 * mmPerInch;  // max thickness of spool
-
-// Bolt hole constants.
-// Free fit for 1/4 and 5/16 is 0.2660 and 0.3320, respectively.
-// See https://littlemachineshop.com/reference/tapdrill.php
-boltHoleDiamSmaller = 0.2660 * mmPerInch;
-boltHoleDiamLarger = 0.3320 * mmPerInch;
-//why?
-//boltHoleDistFromCenter = (outerDiam + innerDiam) / 4.0;
-boltHoleDistFromCenter = 0.75 * mmPerInch;
-
-// Hex head constants - 1/4 bolt for center.
-// 2 Measurements - typical dist across the corners and max head thickness.
-// See http://www.reglover.com/desktop/reg/resources_dimension_bolt_hex.php
-boltHexHeadCornersDistSmaller = 0.505 * mmPerInch; // 7/16 head
-boltHexHeadHeightSmaller = 0.188 * mmPerInch;
 
 
 difference()
