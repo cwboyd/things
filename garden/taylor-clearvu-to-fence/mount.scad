@@ -58,7 +58,14 @@ loc_x_width_centerline = mm_mount_width / 2;
 loc_y_depth_centerline = mm_mount_depth / 2;
 loc_z_thickness_centerline = mm_mount_height / 2;
 
-// calculated locations
+//
+// CALCULATED LOCATIONS
+//
+// The separation plane must be close to the center of the fence hole (e.g. a true
+// diameter and not just a chord).  If it did not, then either the cap or the holder
+// would not fit around it.
+//
+
 xyz_fence_hole = [
     loc_x_width_centerline,
     mm_mount_depth - mm_fence_side_wall_thickness - diam_fence_post/2,
@@ -69,8 +76,8 @@ xyz_gauge_hole = [
     -epsilon];
 xyz_separation_plane = [
     0,
-    mm_mount_depth - 2*mm_fence_side_wall_thickness,
-    -epsilon];
+    mm_mount_depth - mm_fence_side_wall_thickness - diam_fence_post/2,
+    -epsilon/10];
 xyz_bolt_hole_one = [
     mm_fence_side_wall_thickness / 2,
     mm_mount_depth, 
@@ -108,7 +115,7 @@ difference()
     %translate(xyz_nut_hole_two) {
         cube([mm_nut_diam, mm_nut_thickness, mm_mount_height + 2*epsilon], center=true);
     }
-    translate(xyz_separation_plane) {
+    #translate(xyz_separation_plane) {
         cube([300, epsilon, 100], center=true);
     }
 }
