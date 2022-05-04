@@ -22,19 +22,31 @@ diam_gauge = 45;
 diam_gauge_bottomCap = 48;
 diam_gauge_largest_allowed = 100;
 diam_fence_post = 2.375 * mmPerInch;
+diam_largest_hole = max(diam_gauge_largest_allowed, diam_fence_post);
 mm_fence_side_wall_thickness = 10;
 
 
 // outer dimensions
+// mm_mount_width = 2 * mm_fence_side_wall_thickness + diam_largest_hole;
 mm_mount_width = 2 * mm_fence_side_wall_thickness + diam_fence_post;
 mm_mount_depth = 3 * mm_fence_side_wall_thickness + diam_fence_post + diam_gauge_largest_allowed;
 mm_mount_height = 10;
+// echo("diam_fence_post=", diam_fence_post);
+// echo("mm_mount_width=", mm_mount_width);
+// echo("mm_mount_depth=", mm_mount_depth);
 
 
 // calculated locations
 loc_x_width_centerline = mm_mount_width / 2;
 loc_y_depth_centerline = mm_mount_depth / 2;
-xyz_fence = [loc_x_width_centerline, loc_y_depth_centerline, -epsilon];
+xyz_fence_hole = [
+    loc_x_width_centerline,
+    mm_mount_depth - mm_fence_side_wall_thickness - diam_fence_post/2,
+    -epsilon];
+xyz_gauge_hole = [
+    loc_x_width_centerline,
+    0 + mm_fence_side_wall_thickness + diam_gauge_bottomCap/2,
+    -epsilon];
 
 
 // Parameterized values for outside and inside holes and height.
@@ -65,8 +77,11 @@ boltHexHeadHeightSmaller = 0.188 * mmPerInch;
 difference()
 {
     cube([mm_mount_width, mm_mount_depth, mm_mount_height], center=false);
-    translate(xyz_fence) {
-        cylinder(h = mm_mount_height+2*epsilon, r=diam_fence_post/2);
+    translate(xyz_fence_hole) {
+        cylinder(h = mm_mount_height+2*epsilon, d=diam_fence_post);
+    }
+    translate(xyz_gauge_hole) {
+        cylinder(h = mm_mount_height+2*epsilon, d=diam_gauge_bottomCap);
     }
 }
 
