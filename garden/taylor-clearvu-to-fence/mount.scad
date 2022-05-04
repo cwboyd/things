@@ -35,10 +35,19 @@ mm_mount_height = 10;
 // echo("mm_mount_width=", mm_mount_width);
 // echo("mm_mount_depth=", mm_mount_depth);
 
+// fasteners
+mm_bolt_length = 20;
+mm_bolt_diam = 5;
+mm_bolt_socket_diam = 8;
+mm_nut_thickness = 4;
+mm_nut_diam = 8;
 
-// calculated locations
+// calculated reference centerlines
 loc_x_width_centerline = mm_mount_width / 2;
 loc_y_depth_centerline = mm_mount_depth / 2;
+loc_z_thickness_centerline = mm_mount_height / 2;
+
+// calculated locations
 xyz_fence_hole = [
     loc_x_width_centerline,
     mm_mount_depth - mm_fence_side_wall_thickness - diam_fence_post/2,
@@ -47,6 +56,28 @@ xyz_gauge_hole = [
     loc_x_width_centerline,
     0 + mm_fence_side_wall_thickness + diam_gauge_bottomCap/2,
     -epsilon];
+xyz_separation_plane = [
+    0,
+    mm_mount_depth - mm_fence_side_wall_thickness,
+    -epsilon];
+xyz_bolt_hole_one = [
+    mm_fence_side_wall_thickness / 2,
+    mm_mount_depth, 
+    loc_z_thickness_centerline];
+xyz_bolt_hole_two = [
+    mm_mount_width - mm_fence_side_wall_thickness / 2,
+    mm_mount_depth, 
+    loc_z_thickness_centerline];
+xyz_nut_hole_one = [
+    mm_fence_side_wall_thickness / 2,
+    mm_mount_depth - mm_bolt_length + mm_nut_thickness, 
+    loc_z_thickness_centerline - epsilon];
+xyz_nut_hole_two = [
+    mm_mount_width - mm_fence_side_wall_thickness / 2,
+    mm_mount_depth - mm_bolt_length + mm_nut_thickness, 
+    loc_z_thickness_centerline - epsilon];
+    
+
 
 
 // Parameterized values for outside and inside holes and height.
@@ -82,6 +113,12 @@ difference()
     }
     translate(xyz_gauge_hole) {
         cylinder(h = mm_mount_height+2*epsilon, d=diam_gauge_bottomCap);
+    }
+    #translate(xyz_nut_hole_one) {
+        cube([mm_nut_diam, mm_nut_thickness, mm_mount_height + 2*epsilon], center=true);
+    }
+    %translate(xyz_nut_hole_two) {
+        cube([mm_nut_diam, mm_nut_thickness, mm_mount_height + 2*epsilon], center=true);
     }
 }
 
