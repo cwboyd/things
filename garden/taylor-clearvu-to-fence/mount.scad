@@ -40,15 +40,18 @@ mm_mount_height = 10;
 // TODO: measure actual bolts!
 //
 // Parameterized values for outside and inside holes and height.
-// Free / standard fit for M5 bolts is 5.5 mm. 
+// Free / standard fit for M5 bolts is 5.5 mm.
+// For nut & bolt, I rounded dimensions up to next largest integer millimeter.
 // See https://littlemachineshop.com/images/Gallery/PDF/TapDrillSizes.pdf
 mm_bolt_length = 40;
 mm_bolt_diam = 5.5;
 mm_bolt_socket_diam = 8;
 mm_bolt_socket_depth = 4;
 mm_bolt_total_length = mm_bolt_length + mm_bolt_socket_depth;
-mm_nut_thickness = 4;
-mm_nut_diam = 8;
+mm_nut_thickness = 5;
+mm_nut_diam = 9;
+mm_washer_thickness = 1;
+mm_washer_diam = 10;
 
 // Calculated reference centerlines from external dimensions
 loc_x_width_centerline = mm_mount_width / 2;
