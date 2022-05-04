@@ -106,7 +106,7 @@ difference()
         cube([mm_nut_diam, mm_nut_thickness, mm_mount_height + 2*epsilon], center=true);
     }
     translate(xyz_separation_plane) {
-        cube([1000, epsilon, 1000]);
+        cube([300, epsilon, 100], center=true);
     }
 }
 
