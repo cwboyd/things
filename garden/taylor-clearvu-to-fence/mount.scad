@@ -31,9 +31,10 @@ mm_fence_side_wall_thickness = 10;
 mm_mount_width = 2 * mm_fence_side_wall_thickness + diam_fence_post;
 mm_mount_depth = 3 * mm_fence_side_wall_thickness + diam_fence_post + diam_gauge_largest_allowed;
 mm_mount_height = 10;
-// echo("diam_fence_post=", diam_fence_post);
-// echo("mm_mount_width=", mm_mount_width);
-// echo("mm_mount_depth=", mm_mount_depth);
+echo("diam_gauge_largest_allowed=", diam_gauge_largest_allowed);
+echo("diam_fence_post=", diam_fence_post);
+echo("mm_mount_width=", mm_mount_width);
+echo("mm_mount_depth=", mm_mount_depth);
 
 //
 // FASTENERS
