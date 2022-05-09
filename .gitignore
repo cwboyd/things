@@ -15,3 +15,6 @@
 .DS_Store
 ._.DS_Store
 
+# CorelDraw backup files
+Backup_of_*.cdr
+
