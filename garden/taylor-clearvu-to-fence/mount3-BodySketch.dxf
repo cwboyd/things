@@ -219,7 +219,7 @@ TABLE
   2
 LAYER
   5
-A1E
+A2E
 330
 0
 100
@@ -229,9 +229,9 @@ AcDbSymbolTable
   0
 LAYER
   5
-A1F
+A2F
 330
-A1E
+A2E
 100
 AcDbSymbolTableRecord
 100
@@ -247,9 +247,9 @@ CONTINUOUS
   0
 LAYER
   5
-A20
+A30
 330
-A1E
+A2E
 100
 AcDbSymbolTableRecord
 100
@@ -265,9 +265,9 @@ CONTINUOUS
   0
 LAYER
   5
-A21
+A31
 330
-A1E
+A2E
 100
 AcDbSymbolTableRecord
 100
@@ -803,7 +803,7 @@ AcDbLine
  10
 50
  20
--4e-16
+6.7981e-15
  30
 0
  11
@@ -827,13 +827,13 @@ AcDbLine
  10
 140
  20
-2.84786e-11
+5.32907e-15
  30
 0
  11
 50
  21
--4e-16
+6.7981e-15
  31
 0
   0
@@ -861,7 +861,7 @@ AcDbArc
  50
 -90
  51
-2.73221e-09
+-1.01778e-14
   0
 LINE
   5
@@ -909,7 +909,7 @@ AcDbCircle
 100
 AcDbArc
  50
--2.73228e-09
+-8.14222e-14
  51
 90
   0
@@ -949,13 +949,13 @@ Sketch
 100
 AcDbLine
  10
--30.25
+-30.2501
  20
 73
  30
 0
  11
-4.24307e-06
+-9.30749e-05
  21
 73
  31
@@ -973,13 +973,13 @@ Sketch
 100
 AcDbLine
  10
-4.24307e-06
+-9.30749e-05
  20
 73
  30
 0
  11
-4.24307e-06
+-9.30749e-05
  21
 85.5
  31
@@ -997,7 +997,7 @@ Sketch
 100
 AcDbLine
  10
-4.24307e-06
+-9.30749e-05
  20
 85.5
  30
@@ -1053,7 +1053,7 @@ AcDbLine
  11
 -73
  21
-42.75
+83.75
  31
 0
   0
@@ -1071,13 +1071,13 @@ AcDbLine
  10
 -73
  20
-42.75
+83.75
  30
 0
  11
--73
+-72
  21
-0
+83.75
  31
 0
   0
@@ -1093,6 +1093,390 @@ Sketch
 100
 AcDbLine
  10
+-72
+ 20
+83.75
+ 30
+0
+ 11
+-72
+ 21
+82
+ 31
+0
+  0
+LINE
+  5
+A19
+330
+A02
+100
+AcDbEntity
+  8
+Sketch
+100
+AcDbLine
+ 10
+-72
+ 20
+82
+ 30
+0
+ 11
+-73
+ 21
+82
+ 31
+0
+  0
+LINE
+  5
+A1A
+330
+A02
+100
+AcDbEntity
+  8
+Sketch
+100
+AcDbLine
+ 10
+-73
+ 20
+82
+ 30
+0
+ 11
+-73
+ 21
+76.5
+ 31
+0
+  0
+LINE
+  5
+A1B
+330
+A02
+100
+AcDbEntity
+  8
+Sketch
+100
+AcDbLine
+ 10
+-73
+ 20
+76.5
+ 30
+0
+ 11
+-72
+ 21
+76.5
+ 31
+0
+  0
+LINE
+  5
+A1C
+330
+A02
+100
+AcDbEntity
+  8
+Sketch
+100
+AcDbLine
+ 10
+-72
+ 20
+76.5
+ 30
+0
+ 11
+-72
+ 21
+74.75
+ 31
+0
+  0
+LINE
+  5
+A1D
+330
+A02
+100
+AcDbEntity
+  8
+Sketch
+100
+AcDbLine
+ 10
+-72
+ 20
+74.75
+ 30
+0
+ 11
+-73
+ 21
+74.75
+ 31
+0
+  0
+LINE
+  5
+A1E
+330
+A02
+100
+AcDbEntity
+  8
+Sketch
+100
+AcDbLine
+ 10
+-73
+ 20
+74.75
+ 30
+0
+ 11
+-73
+ 21
+42.75
+ 31
+0
+  0
+LINE
+  5
+A1F
+330
+A02
+100
+AcDbEntity
+  8
+Sketch
+100
+AcDbLine
+ 10
+-73
+ 20
+42.75
+ 30
+0
+ 11
+-73
+ 21
+10.75
+ 31
+0
+  0
+LINE
+  5
+A20
+330
+A02
+100
+AcDbEntity
+  8
+Sketch
+100
+AcDbLine
+ 10
+-73
+ 20
+10.75
+ 30
+0
+ 11
+-72
+ 21
+10.75
+ 31
+0
+  0
+LINE
+  5
+A21
+330
+A02
+100
+AcDbEntity
+  8
+Sketch
+100
+AcDbLine
+ 10
+-72
+ 20
+10.75
+ 30
+0
+ 11
+-72
+ 21
+9
+ 31
+0
+  0
+LINE
+  5
+A22
+330
+A02
+100
+AcDbEntity
+  8
+Sketch
+100
+AcDbLine
+ 10
+-72
+ 20
+9
+ 30
+0
+ 11
+-73
+ 21
+9
+ 31
+0
+  0
+LINE
+  5
+A23
+330
+A02
+100
+AcDbEntity
+  8
+Sketch
+100
+AcDbLine
+ 10
+-73
+ 20
+9
+ 30
+0
+ 11
+-73
+ 21
+3.5
+ 31
+0
+  0
+LINE
+  5
+A24
+330
+A02
+100
+AcDbEntity
+  8
+Sketch
+100
+AcDbLine
+ 10
+-73
+ 20
+3.5
+ 30
+0
+ 11
+-72
+ 21
+3.5
+ 31
+0
+  0
+LINE
+  5
+A25
+330
+A02
+100
+AcDbEntity
+  8
+Sketch
+100
+AcDbLine
+ 10
+-72
+ 20
+3.5
+ 30
+0
+ 11
+-72
+ 21
+1.75
+ 31
+0
+  0
+LINE
+  5
+A26
+330
+A02
+100
+AcDbEntity
+  8
+Sketch
+100
+AcDbLine
+ 10
+-72
+ 20
+1.75
+ 30
+0
+ 11
+-73
+ 21
+1.75
+ 31
+0
+  0
+LINE
+  5
+A27
+330
+A02
+100
+AcDbEntity
+  8
+Sketch
+100
+AcDbLine
+ 10
+-73
+ 20
+1.75
+ 30
+0
+ 11
+-73
+ 21
+0
+ 31
+0
+  0
+LINE
+  5
+A28
+330
+A02
+100
+AcDbEntity
+  8
+Sketch
+100
+AcDbLine
+ 10
 -73
  20
 0
@@ -1107,7 +1491,7 @@ AcDbLine
   0
 LINE
   5
-A19
+A29
 330
 A02
 100
@@ -1131,7 +1515,7 @@ AcDbLine
   0
 LINE
   5
-A1A
+A2A
 330
 A02
 100
@@ -1155,7 +1539,7 @@ AcDbLine
   0
 LINE
   5
-A1B
+A2B
 330
 A02
 100
@@ -1179,7 +1563,7 @@ AcDbLine
   0
 ARC
   5
-A1C
+A2C
 330
 A02
 100
@@ -1199,13 +1583,13 @@ AcDbCircle
 100
 AcDbArc
  50
-90
+90.0001
  51
--90
+-89.9999
   0
 CIRCLE
   5
-A1D
+A2D
 330
 A02
 100
